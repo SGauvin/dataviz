@@ -52,10 +52,6 @@ function mergeSeasons(data) {
                 mergedSeason[attr] = cleanedUpValue[attr];
             }
             
-            for (const attr of attributesToKeep) {
-                mergedSeason[attr] = cleanedUpValue[attr];
-            }
-            
             for (const attr of attributesToKeepAndAdd) {
                 mergedSeason[attr] = cleanedUpValue[attr] + currentStat[attr];
             }

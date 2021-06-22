@@ -21,7 +21,7 @@ export default defineComponent({
         padding: 0;
         top: 90%;
         left: 5%;
-		transform: translateY(-50%);
+    transform: translateY(-50%);
 		position: relative;
         font-size: 8em;
     }

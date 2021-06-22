@@ -35,7 +35,8 @@ export default defineComponent({
                 .transition()
                 .duration(300)
                 .attr('stroke', 'black')
-                .attr('stroke-width', '1.3')
+                .attr('stroke-width', '2')
+                .attr('opacity', 1.0)
         }
 
         function removeHighlight(playerName) {
@@ -44,6 +45,7 @@ export default defineComponent({
                 .duration(300)
                 .attr('stroke', 'transparent')
                 .attr('stroke-width', '0')
+                .attr('opacity', 0.7)
         }
 
         function createLegend(data) {
@@ -56,6 +58,7 @@ export default defineComponent({
                 .join('div')
                 .style('font-family', 'Roboto')
                 .style('display', 'flex')
+                .style('opacity', 0.7)
                 .on('mouseover', (event, element) => highlightPlayer(element.PlayerName))
                 .on('mouseout', (event, element) => removeHighlight(element.PlayerName))
                 

@@ -37,6 +37,7 @@ export default defineComponent({
                 .attr('fill', element => colorScale(element.x))
                 .attr('width', xScale.bandwidth())
                 .attr('height', element => graphDimensions.height - yScale(+element.y))
+                .attr('opacity', 0.7)
                 .attr('x', element => xScale(element.x))
                 .attr('y', element => yScale(element.y))
                 .attr('stroke', 'none')
