@@ -55,6 +55,9 @@ export default defineComponent({
                 .transition()
                 .duration(300)
                 .attr('fill', newColor);
+
+            d3.selectAll(`#legend-bar-${playerName.replace(/\s/g,'')}`)
+                .style('background-color', newColor);
         }
 
         function createLegend(data) {
@@ -74,6 +77,7 @@ export default defineComponent({
                 
 
             divs.append('div')
+                .attr('id', element => `legend-bar-${element.PlayerName.replace(/\s/g,'')}`)
                 .style('width', '20px')
                 .style('height', '20px')
                 .style('border-radius', '10px')
