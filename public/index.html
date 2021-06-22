@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="icon" href="favicon.ico">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.1/fullpage.min.css"/>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <title><%= htmlWebpackPlugin.options.title %></title>
+
+        <style>
+            .background-image{
+                background-size: cover;
+                height: 100%;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div id="fullpage">
+            <div class="section background-image" id="front-page" style="height: 100%; background-image: url(benzema1.jpg)"></div>
+
+            <div class="section">
+                <div id="intro-page"></div>
+            </div>
+
+            <div class="section background-image" id="ligua-intro" style="background-image: url(benzema2.jpg);"></div>
+            
+            <div class="section" style="color: white;">
+                <div style="text-align: center; font-family: 'Roboto';">
+                    <h1 style="font-size: 32px;">
+                        Explain what dataviz is coming
+                    </h1>
+                    <div style="font-size:24px">
+                        sheesh
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div id="barcharts"></div>
+            </div>
+
+            <div class="section background-image" id="" style="height: 100%; background-image: url(benzema3.jpg)"></div>
+
+            <div class="section">
+                <div style="text-align: center; font-family: 'Roboto';">
+                    <h1 style="font-size: 32px;">
+                        Benzema compared to Giroud
+                    </h1>
+                    <div style="font-size:24px">
+                        sheesh
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div id="linechart"></div>
+            </div>
+            <div class="section" style="color: white">
+                <div style="text-align: center; font-family: 'Roboto';">
+                    <h1 style="font-size: 32px;">
+                        Conclusion
+                    </h1>
+                    <div style="font-size:24px">
+                        sheesh
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.1/fullpage.min.js"></script>
+        <script type="text/javascript">
+            var myFullpage = new fullpage('#fullpage', {
+                sectionsColor: [
+                    'white', // Front page picture
+                    '#264653', // Backstory
+                    'white', // Ligua intro picture
+                    '#c45b41', // Ligua intro text
+                    '#faebe8', // Ligua dataviz
+                    'white', // Giroud intro picture
+                    '#2A9D8F', // Giroud intro text
+                    '#e4f2f1', // Giroud dataviz
+                    '#000' // Conclusion
+                ]
+            });
+        </script>
+    </body>
+</html>
