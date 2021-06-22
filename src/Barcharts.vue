@@ -48,6 +48,15 @@ export default defineComponent({
                 .attr('opacity', 0.7)
         }
 
+        function toggleColor(playerName, scale) {
+            const currentColor = d3.selectAll(`#bar-${playerName.replace(/\s/g,'')}`).attr('fill');
+            const newColor = currentColor === 'rgb(0, 0, 0)' ? scale(playerName) : 'rgb(0, 0, 0)';
+            d3.selectAll(`#bar-${playerName.replace(/\s/g,'')}`)
+                .transition()
+                .duration(300)
+                .attr('fill', newColor);
+        }
+
         function createLegend(data) {
             const scale = d3.scaleOrdinal();
             scale.domain(data.map(element => element.PlayerName)).range(d3.schemeCategory10);
@@ -61,6 +70,7 @@ export default defineComponent({
                 .style('opacity', 0.7)
                 .on('mouseover', (event, element) => highlightPlayer(element.PlayerName))
                 .on('mouseout', (event, element) => removeHighlight(element.PlayerName))
+                .on('click', (event, element) => toggleColor(element.PlayerName, scale));
                 
 
             divs.append('div')
