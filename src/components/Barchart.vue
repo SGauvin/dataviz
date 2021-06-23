@@ -34,7 +34,7 @@ export default defineComponent({
                 .selectAll('.bars')
                 .data(data)
                 .join('rect')
-                .attr('fill', element => colorScale(element.x))
+                .attr('fill', element => element.x === 'Karim Benzema' ? colorScale(element.x) : 'rgb(0, 0, 0)')
                 .attr('width', xScale.bandwidth())
                 .attr('height', element => graphDimensions.height - yScale(+element.y))
                 .attr('opacity', 0.8)

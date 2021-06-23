@@ -102,7 +102,7 @@ export default defineComponent({
                 .style('height', '20px')
                 .style('border-radius', '10px')
                 .style('margin-right', '3px')
-                .style('background-color', element => scale(element.PlayerName))
+                .style('background-color', element => element.PlayerName === 'Karim Benzema' ? scale(element.PlayerName) : 'rgb(0, 0, 0)')
                 .style('opacity', opacityValue)
 
             divs.append('div')
