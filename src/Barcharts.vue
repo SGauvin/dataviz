@@ -30,33 +30,54 @@ export default defineComponent({
     components: { Barchart },
     name: 'Barcharts',
     setup() {
+        const transitionTime = 300;
+        const opacityValue = 0.80;
+
         function highlightPlayer(playerName) {
-            d3.selectAll(`#bar-${playerName.replace(/\s/g,'')}`)
-                .transition()
-                .duration(300)
+            const selectorName = playerName.replace(/\s/g,'');
+
+            d3.selectAll(`#bar-${selectorName}`)
+                .transition(`transition-highlight-${playerName}`)
+                .duration(transitionTime)
                 .attr('stroke', 'black')
                 .attr('stroke-width', '2')
                 .attr('opacity', 1.0)
+
+            d3.select(`#legend-bar-${selectorName}`)
+                .transition(`transition-highlight-${playerName}`)
+                .duration(transitionTime)
+                .style('opacity', 1);
         }
 
         function removeHighlight(playerName) {
-            d3.selectAll(`#bar-${playerName.replace(/\s/g,'')}`)
-                .transition()
-                .duration(300)
+            const selectorName = playerName.replace(/\s/g,'');
+
+            d3.selectAll(`#bar-${selectorName}`)
+                .transition(`transition-highlight-${playerName}`)
+                .duration(transitionTime)
                 .attr('stroke', 'transparent')
                 .attr('stroke-width', '0')
-                .attr('opacity', 0.7)
+                .attr('opacity', opacityValue)
+
+            d3.select(`#legend-bar-${selectorName}`)
+                .transition(`transition-highlight-${playerName}`)
+                .duration(transitionTime)
+                .style('opacity', opacityValue);
         }
 
         function toggleColor(playerName, scale) {
-            const currentColor = d3.selectAll(`#bar-${playerName.replace(/\s/g,'')}`).attr('fill');
+            const selectorName = playerName.replace(/\s/g,'');
+
+            const currentColor = d3.selectAll(`#bar-${selectorName}`).attr('fill');
             const newColor = currentColor === 'rgb(0, 0, 0)' ? scale(playerName) : 'rgb(0, 0, 0)';
-            d3.selectAll(`#bar-${playerName.replace(/\s/g,'')}`)
-                .transition()
-                .duration(300)
+            d3.selectAll(`#bar-${selectorName}`)
+                .transition(`transition-${selectorName}`)
+                .duration(transitionTime)
                 .attr('fill', newColor);
 
-            d3.selectAll(`#legend-bar-${playerName.replace(/\s/g,'')}`)
+            d3.select(`#legend-bar-${selectorName}`)
+                .transition(`transition-${selectorName}`)
+                .duration(transitionTime)
                 .style('background-color', newColor);
         }
 
@@ -70,12 +91,11 @@ export default defineComponent({
                 .join('div')
                 .style('font-family', 'Roboto')
                 .style('display', 'flex')
-                .style('opacity', 0.7)
+                .style('cursor', 'pointer')
                 .on('mouseover', (event, element) => highlightPlayer(element.PlayerName))
                 .on('mouseout', (event, element) => removeHighlight(element.PlayerName))
                 .on('click', (event, element) => toggleColor(element.PlayerName, scale));
                 
-
             divs.append('div')
                 .attr('id', element => `legend-bar-${element.PlayerName.replace(/\s/g,'')}`)
                 .style('width', '20px')
@@ -83,9 +103,9 @@ export default defineComponent({
                 .style('border-radius', '10px')
                 .style('margin-right', '3px')
                 .style('background-color', element => scale(element.PlayerName))
+                .style('opacity', opacityValue)
 
             divs.append('div')
-                .style('cursor', 'default')
                 .text(element => element.PlayerName)
         }
 

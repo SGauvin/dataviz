@@ -37,14 +37,34 @@ export default defineComponent({
                 .attr('fill', element => colorScale(element.x))
                 .attr('width', xScale.bandwidth())
                 .attr('height', element => graphDimensions.height - yScale(+element.y))
-                .attr('opacity', 0.7)
+                .attr('opacity', 0.8)
                 .attr('x', element => xScale(element.x))
                 .attr('y', element => yScale(element.y))
-                .attr('stroke', 'none')
+                .attr('stroke', 'transparent')
                 .attr('stroke-width', '0')
                 .attr('id', element => `bar-${element.x.replace(/\s/g,'')}`)
-                .on('mouseover', (event, value) => toolTip.show(value, event.target))
-                .on('mouseout', (event, value) => toolTip.hide(value, event.target))
+                .on('mouseover', (event, value) => {
+                    toolTip.show(value, event.target);
+                    d3.select(`#${props.id}`)
+                        .select('svg')
+                        .select(`#bar-${value.x.replace(/\s/g,'')}`)
+                        .transition(`transition-bar-hover-${value.x.replace(/\s/g,'')}`)
+                        .duration(300)
+                        .attr('opacity', 1)
+                        .attr('stroke-width', 2)
+                        .attr('stroke', 'black')
+                })
+                .on('mouseout', (event, value) => {
+                    toolTip.hide(value, event.target);
+                    d3.select(`#${props.id}`)
+                        .select('svg')
+                        .select(`#bar-${value.x.replace(/\s/g,'')}`)
+                        .transition(`transition-bar-hover-${value.x.replace(/\s/g,'')}`)
+                        .duration(300)
+                        .attr('opacity', 0.8)
+                        .attr('stroke-width', 0)
+                        .attr('stroke', 'transparent')
+                })
         }
 
         function createTitle(svgRoot) {
