@@ -97,8 +97,6 @@ export default defineComponent({
                 .transition()
                 .duration(transitionTime)
                 .attr('cy', element => yScale(element[statName]))
-                // .on('mouseover', (event, value) => toolTip.show(value, event.target))
-                // .on('mouseout', (event, value) => toolTip.hide(value, event.target));
         }
 
         function createXScale(benzemaData, giroudData, graphDimensions) {
@@ -200,19 +198,17 @@ export default defineComponent({
 
         function getTooltipContent(element) {
             return `<div style="font-family: 'Roboto', sans-serif">
-            <span>${element[currentStatName.value]}</span>`;
+            <span>${currentStatName.value}: ${element[currentStatName.value]}</span>`;
         }
 
         onMounted(async () => {
             createSvg();
             svgRoot = d3.select(`#linechart-content`);
             toolTip = d3Tip().attr('class', 'd3-tip').html(getTooltipContent);
-            svgRoot.call(toolTip);
+            svgRoot.select('#content-g').call(toolTip);
 
             benzemaData = await getBenzemaHistoricalStats();
             giroudData = await getGiroudHistoricalStats();
-            // console.log(benzemaData)
-            // console.log(giroudData)
             createXScale(benzemaData, giroudData, size);
             createYScale(benzemaData, giroudData, size, currentStatName.value);
 
@@ -306,5 +302,69 @@ export default defineComponent({
         display: flex;
         cursor: default;
     }
+
+/* 
+
+DO NOT MODIFY. 
+
+Example CSS file provided with d3-tip library.
+Credits : https://rawgit.com/Caged/d3-tip/master/examples/example-styles.css 
+
+*/
+
+.d3-tip {
+    line-height: 1;
+    font-weight: bold;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 2px;
+    pointer-events: none;
+  }
+  
+  /* Creates a small triangle extender for the tooltip */
+  .d3-tip:after {
+    box-sizing: border-box;
+    font-size: 10px;
+    width: 100%;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    pointer-events: none;
+  }
+  
+  /* Northward tooltips */
+  .d3-tip.n:after {
+    content: "\25BC";
+    margin: -1px 0 0 0;
+    top: 100%;
+    left: 0;
+    text-align: center;
+  }
+  
+  /* Eastward tooltips */
+  .d3-tip.e:after {
+    content: "\25C0";
+    margin: -4px 0 0 0;
+    top: 50%;
+    left: -8px;
+  }
+  
+  /* Southward tooltips */
+  .d3-tip.s:after {
+    content: "\25B2";
+    margin: 0 0 1px 0;
+    top: -8px;
+    left: 0;
+    text-align: center;
+  }
+  
+  /* Westward tooltips */
+  .d3-tip.w:after {
+    content: "\25B6";
+    margin: -4px 0 0 -1px;
+    top: 50%;
+    left: 100%;
+  }
 
 </style>

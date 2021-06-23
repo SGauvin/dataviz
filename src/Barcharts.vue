@@ -41,7 +41,7 @@ export default defineComponent({
                 .duration(transitionTime)
                 .attr('stroke', 'black')
                 .attr('stroke-width', '2')
-                .attr('opacity', 1.0)
+                .attr('opacity', 1)
 
             d3.select(`#legend-bar-${selectorName}`)
                 .transition(`transition-highlight-${playerName}`)
