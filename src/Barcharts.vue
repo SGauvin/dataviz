@@ -2,17 +2,17 @@
     <div>
         <div style="width: 1420px; margin: auto">
             <div style="display: grid; grid-template-columns: fit-content(355px) fit-content(355px) fit-content(355px) fit-content(355px); width: 100%;">
-                <Barchart id="goalStat" :data="goalStat" title="Goals scored" statName="Goals"/>
-                <Barchart id="expectedGoals" :data="expectedGoalsStat" title="Expected goals" statName="Expected goals"/>
-                <Barchart id="goalPer90MinutesStat" :data="goalsPer90MinutesStat" title="Goals scored per 90 minutes of playtime" statName="Goals per 90 minutes"/>
-                <Barchart id="shots" :data="shotsStat" title="Shots" statName="Shots"/>
-                <Barchart id="shotsOnTarget" :data="shotsOnTargetStat" title="Shots on target" statName="Shots on target"/>
-                <Barchart id="shotsOnTargetPercentage" :data="shotsOnTargetPercentageStat" title="Percentage of shots on target" statName="Percentage of shots per target"/>
-                <Barchart id="goalsPerShotOnTarget" :data="goalsPerShotOnTargetStat" title="Goals per shot on target" statName="Goals per shot on target"/>
+                <Barchart id="goalStat" :data="goalStat" title="Buts marqués" statName="Nombre de buts"/>
+                <Barchart id="expectedGoals" :data="expectedGoalsStat" title="Buts attendus" statName="Nombre de buts attendus"/>
+                <Barchart id="goalPer90MinutesStat" :data="goalsPer90MinutesStat" title="Buts par 90 minutes" statName="Buts par 90 minutes"/>
+                <Barchart id="shots" :data="shotsStat" title="Tirs" statName="Nombre de tirs"/>
+                <Barchart id="shotsOnTarget" :data="shotsOnTargetStat" title="Tirs cadrés" statName="Nombre de tirs cadrés"/>
+                <Barchart id="shotsOnTargetPercentage" :data="shotsOnTargetPercentageStat" title="Pourcentage de tirs cardés" statName="Poucentage de tirs cadrés"/>
+                <Barchart id="goalsPerShotOnTarget" :data="goalsPerShotOnTargetStat" title="Buts par tir cadré" statName="But par tir cadré"/>
                 <Barchart id="passingStat" :data="passingStat" title="Passes" statName="Passes"/>
-                <Barchart id="gamesStarted" :data="matchPlayedStat" title="Games played" statName="Games played"/>
-                <Barchart id="minutesPlayed" :data="minutesPlayedStat" title="Minutes played" statName="Minutes played"/>
-                <Barchart id="yellowCards" :data="yellowCardsStat" title="Yellow cards received" statName="Yellow cards"/>
+                <Barchart id="gamesStarted" :data="matchPlayedStat" title="Parties jouées" statName="Parties jouées"/>
+                <Barchart id="minutesPlayed" :data="minutesPlayedStat" title="Minutes jouées" statName="Minutes jouées"/>
+                <Barchart id="yellowCards" :data="yellowCardsStat" title="Cartes jaunes recu" statName="Cartes jaunes"/>
             </div>
             <div class="barchart-legend" style="display:flex; justify-content: space-between; padding-left: 40px; padding-right:15px"></div>
         </div>

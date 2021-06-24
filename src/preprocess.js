@@ -71,7 +71,6 @@ function computeDerivedStats(data) {
 }
 
 export async function getLiguaStats() {
-    console.log(window.location.origin)
     const standardStatsFilename = window.location.origin + '/standard_stats_la_ligua.csv';
     const shootingStatsFilename = window.location.origin + '/shooting_stats_la_ligua.csv';
     const passingStatsFilename = window.location.origin + '/passing_stats_la_ligua.csv';

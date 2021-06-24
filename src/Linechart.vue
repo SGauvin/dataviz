@@ -2,16 +2,16 @@
     <div class="linechart-container">
         <div class="linechart-viz" id="linechart-content" style="font-family: 'Roboto', sans-serif"></div>
         <div class="statSelector">
-            <div class="list-item" :class="{selected : currentStatName === 'Goals'}" @click="updateData('Goals')">Goals</div>
-            <div class="list-item" :class="{selected : currentStatName === 'MinutesPlayed'}" @click="updateData('MinutesPlayed')">Minutes Played</div>
-            <div class="list-item" :class="{selected : currentStatName === 'Assists'}" @click="updateData('Assists')">Assists</div>
-            <div class="list-item" :class="{selected : currentStatName === 'Shots'}" @click="updateData('Shots')">Shots</div>
-            <div class="list-item" :class="{selected : currentStatName === 'ShotsOnTarget'}" @click="updateData('ShotsOnTarget')">Shots on Target</div>
-            <div class="list-item" :class="{selected : currentStatName === 'YellowCards'}" @click="updateData('YellowCards')">Yellow Cards</div>
-            <div class="list-item" :class="{selected : currentStatName === 'RedCards'}" @click="updateData('RedCards')">Red Cards</div>
-            <div class="list-item" :class="{selected : currentStatName === 'GoalsPer90Minutes'}" @click="updateData('GoalsPer90Minutes')">Goals per 90 minutes</div>
-            <div class="list-item" :class="{selected : currentStatName === 'AssistsPer90Minutes'}" @click="updateData('AssistsPer90Minutes')">Assists per 90 minutes</div>
-            <div class="list-item" :class="{selected : currentStatName === 'ShotsOnTargetPer90Minutes'}" @click="updateData('ShotsOnTargetPer90Minutes')">Shots on target per 90 minutes</div>
+            <div class="list-item" :class="{selected : currentStatName === 'Goals'}" @click="updateData('Goals')">Buts</div>
+            <div class="list-item" :class="{selected : currentStatName === 'MinutesPlayed'}" @click="updateData('MinutesPlayed')">Minutes jouées</div>
+            <div class="list-item" :class="{selected : currentStatName === 'Assists'}" @click="updateData('Assists')">Passes</div>
+            <div class="list-item" :class="{selected : currentStatName === 'Shots'}" @click="updateData('Shots')">Tirs</div>
+            <div class="list-item" :class="{selected : currentStatName === 'ShotsOnTarget'}" @click="updateData('ShotsOnTarget')">Tirs cadrés</div>
+            <div class="list-item" :class="{selected : currentStatName === 'YellowCards'}" @click="updateData('YellowCards')">Cartes jaunes</div>
+            <div class="list-item" :class="{selected : currentStatName === 'RedCards'}" @click="updateData('RedCards')">Cartes rouges</div>
+            <div class="list-item" :class="{selected : currentStatName === 'GoalsPer90Minutes'}" @click="updateData('GoalsPer90Minutes')">Buts par 90 minutes</div>
+            <div class="list-item" :class="{selected : currentStatName === 'AssistsPer90Minutes'}" @click="updateData('AssistsPer90Minutes')">Passes par 90 minutes</div>
+            <div class="list-item" :class="{selected : currentStatName === 'ShotsOnTargetPer90Minutes'}" @click="updateData('ShotsOnTargetPer90Minutes')">Tirs cadrés par 90 minutes</div>
         </div>
         <div class="linechart-legend">
             <div class="linechart-legend-item-container" @mouseenter="highlightPlayer('benzema')" @mouseout="removeHighlight('benzema')">
@@ -198,7 +198,7 @@ export default defineComponent({
 
         function getTooltipContent(element) {
             return `<div style="font-family: 'Roboto', sans-serif">
-            <span>${currentStatName.value}: ${element[currentStatName.value]}</span>`;
+            <span>${element[currentStatName.value]}</span>`;
         }
 
         onMounted(async () => {
