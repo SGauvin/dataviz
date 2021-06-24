@@ -10,6 +10,7 @@
                 <Barchart id="shotsOnTargetPercentage" :data="shotsOnTargetPercentageStat" title="Pourcentage de tirs cardés" statName="Poucentage de tirs cadrés"/>
                 <Barchart id="goalsPerShotOnTarget" :data="goalsPerShotOnTargetStat" title="Buts par tir cadré" statName="But par tir cadré"/>
                 <Barchart id="passingStat" :data="passingStat" title="Passes" statName="Passes"/>
+                <Barchart id="passCompleted" :data="passCompletedStat" title="Passes complétées" statName="Passes complétées"/>
                 <Barchart id="gamesStarted" :data="matchPlayedStat" title="Parties jouées" statName="Parties jouées"/>
                 <Barchart id="minutesPlayed" :data="minutesPlayedStat" title="Minutes jouées" statName="Minutes jouées"/>
                 <Barchart id="yellowCards" :data="yellowCardsStat" title="Cartes jaunes recu" statName="Cartes jaunes"/>
@@ -119,6 +120,7 @@ export default defineComponent({
 
         let goalStat = ref([]);
         let goalsPer90MinutesStat = ref([]);
+        let passCompletedStat = ref([]);
         let passingStat = ref([]);
         let matchPlayedStat = ref([]);
         let expectedGoalsStat = ref([]);
@@ -137,6 +139,7 @@ export default defineComponent({
             // Barcharts
             goalStat.value = getStat(liguaStats, 'Goals');
             goalsPer90MinutesStat.value = getStat(liguaStats, 'GoalsPer90Minutes');
+            passCompletedStat.value = getStat(liguaStats, 'PassCompleted');
             passingStat.value = getStat(liguaStats, 'Assists');
             matchPlayedStat.value = getStat(liguaStats, 'MatchPlayed');
             expectedGoalsStat.value = getStat(liguaStats, 'ExpectedGoals');
@@ -155,6 +158,7 @@ export default defineComponent({
             matchPlayedStat,
             expectedGoalsStat,
             yellowCardsStat,
+            passCompletedStat,
             shotsStat,
             shotsOnTargetStat,
             shotsOnTargetPercentageStat,

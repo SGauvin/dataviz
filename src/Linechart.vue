@@ -217,7 +217,7 @@ export default defineComponent({
 
         function getTooltipContent(element) {
             return `<div style="font-family: 'Roboto', sans-serif">
-            <span>${Math.round(+element[currentStatName.value] * 1000) / 1000}</span>`;
+            <span>${Math.round(+element[currentStatName.value] * 1000) / 1000}</span></div>`;
         }
 
         onMounted(async () => {
