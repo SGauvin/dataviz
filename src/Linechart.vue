@@ -12,6 +12,7 @@
             <div class="list-item" :class="{selected : currentStatName === 'GoalsPer90Minutes'}" @click="updateData('GoalsPer90Minutes')">Buts par 90 minutes</div>
             <div class="list-item" :class="{selected : currentStatName === 'AssistsPer90Minutes'}" @click="updateData('AssistsPer90Minutes')">Passes par 90 minutes</div>
             <div class="list-item" :class="{selected : currentStatName === 'ShotsOnTargetPer90Minutes'}" @click="updateData('ShotsOnTargetPer90Minutes')">Tirs cadrés par 90 minutes</div>
+            <div class="list-item" :class="{selected : currentStatName === 'GoalsPerShotsOnTarget'}" @click="updateData('GoalsPerShotsOnTarget')">Buts par tir cadré</div>
         </div>
         <div class="linechart-legend">
             <div class="linechart-legend-item-container" @mouseenter="highlightPlayer('benzema')" @mouseout="removeHighlight('benzema')">
@@ -97,6 +98,13 @@ export default defineComponent({
                 .transition()
                 .duration(transitionTime)
                 .attr('cy', element => yScale(element[statName]))
+
+            svgRoot.select('#content-g')
+                .selectAll(`.circles-hover-${playerName}`)
+                .data(data)
+                .transition()
+                .duration(transitionTime)
+                .attr('cy', element => yScale(element[statName]))
         }
 
         function createXScale(benzemaData, giroudData, graphDimensions) {
@@ -127,6 +135,17 @@ export default defineComponent({
                 .attr('cx', element => xScale(element.Season))
                 .attr('cy', element => yScale(element[yVar]))
                 .attr('r', 5)
+
+            svgRoot.select('#content-g')
+                .selectAll(`.circles-hover-${playerName}`)
+                .data(data)
+                .join('circle')
+                .attr('class', `circles-hover-${playerName}`)
+                .attr('fill', 'transparent')
+                .attr('cx', element => xScale(element.Season))
+                .attr('cy', element => yScale(element[yVar]))
+                .attr('r', 20)
+                .attr('pointer-events', 'bounding-box')
                 .on('mouseover', (event, value) => toolTip.show(value, event.target))
                 .on('mouseout', (event, value) => toolTip.hide(value, event.target));
         }
@@ -198,7 +217,7 @@ export default defineComponent({
 
         function getTooltipContent(element) {
             return `<div style="font-family: 'Roboto', sans-serif">
-            <span>${element[currentStatName.value]}</span>`;
+            <span>${Math.round(+element[currentStatName.value] * 1000) / 1000}</span>`;
         }
 
         onMounted(async () => {

@@ -64,6 +64,7 @@ function mergeSeasons(data) {
 function computeDerivedStats(data) {
     for (const season of data) {
         season['GoalsPer90Minutes'] = season['Goals'] / season['MinutesPlayed'] * 90;
+        season['GoalsPerShotsOnTarget'] = season['Goals'] / season['ShotsOnTarget'];
         season['AssistsPer90Minutes'] = season['Assists'] / season['MinutesPlayed'] * 90;
         season['ShotsOnTargetPer90Minutes'] = season['ShotsOnTarget'] / season['MinutesPlayed'] * 90;
     }
