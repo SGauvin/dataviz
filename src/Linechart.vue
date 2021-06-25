@@ -4,15 +4,14 @@
         <div class="statSelector">
             <div class="list-item" :class="{selected : currentStatName === 'Goals'}" @click="updateData('Goals')">Buts</div>
             <div class="list-item" :class="{selected : currentStatName === 'MinutesPlayed'}" @click="updateData('MinutesPlayed')">Minutes jouées</div>
-            <div class="list-item" :class="{selected : currentStatName === 'Assists'}" @click="updateData('Assists')">Passes</div>
-            <div class="list-item" :class="{selected : currentStatName === 'Shots'}" @click="updateData('Shots')">Tirs</div>
+            <div class="list-item" :class="{selected : currentStatName === 'Assists'}" @click="updateData('Assists')">Passes décisives</div>
             <div class="list-item" :class="{selected : currentStatName === 'ShotsOnTarget'}" @click="updateData('ShotsOnTarget')">Tirs cadrés</div>
-            <div class="list-item" :class="{selected : currentStatName === 'YellowCards'}" @click="updateData('YellowCards')">Cartes jaunes</div>
-            <div class="list-item" :class="{selected : currentStatName === 'RedCards'}" @click="updateData('RedCards')">Cartes rouges</div>
+            <div class="list-item" :class="{selected : currentStatName === 'GoalsPerShotsOnTarget'}" @click="updateData('GoalsPerShotsOnTarget')">Buts par tir cadré</div>
             <div class="list-item" :class="{selected : currentStatName === 'GoalsPer90Minutes'}" @click="updateData('GoalsPer90Minutes')">Buts par 90 minutes</div>
             <div class="list-item" :class="{selected : currentStatName === 'AssistsPer90Minutes'}" @click="updateData('AssistsPer90Minutes')">Passes par 90 minutes</div>
             <div class="list-item" :class="{selected : currentStatName === 'ShotsOnTargetPer90Minutes'}" @click="updateData('ShotsOnTargetPer90Minutes')">Tirs cadrés par 90 minutes</div>
-            <div class="list-item" :class="{selected : currentStatName === 'GoalsPerShotsOnTarget'}" @click="updateData('GoalsPerShotsOnTarget')">Buts par tir cadré</div>
+            <div class="list-item" :class="{selected : currentStatName === 'YellowCards'}" @click="updateData('YellowCards')">Cartons jaunes</div>
+            <div class="list-item" :class="{selected : currentStatName === 'RedCards'}" @click="updateData('RedCards')">Cartons rouges</div>
         </div>
         <div class="linechart-legend">
             <div class="linechart-legend-item-container" @mouseenter="highlightPlayer('benzema')" @mouseout="removeHighlight('benzema')">
@@ -144,7 +143,7 @@ export default defineComponent({
                 .attr('fill', 'transparent')
                 .attr('cx', element => xScale(element.Season))
                 .attr('cy', element => yScale(element[yVar]))
-                .attr('r', 20)
+                .attr('r', 15)
                 .attr('pointer-events', 'bounding-box')
                 .on('mouseover', (event, value) => toolTip.show(value, event.target))
                 .on('mouseout', (event, value) => toolTip.hide(value, event.target));

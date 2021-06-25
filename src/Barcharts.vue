@@ -5,15 +5,15 @@
                 <Barchart id="goalStat" :data="goalStat" title="Buts marqués" statName="Nombre de buts"/>
                 <Barchart id="expectedGoals" :data="expectedGoalsStat" title="Buts attendus" statName="Nombre de buts attendus"/>
                 <Barchart id="goalPer90MinutesStat" :data="goalsPer90MinutesStat" title="Buts par 90 minutes" statName="Buts par 90 minutes"/>
+                <Barchart id="goalsPerShotOnTarget" :data="goalsPerShotOnTargetStat" title="Buts par tir cadré" statName="But par tir cadré"/>
                 <Barchart id="shots" :data="shotsStat" title="Tirs" statName="Nombre de tirs"/>
                 <Barchart id="shotsOnTarget" :data="shotsOnTargetStat" title="Tirs cadrés" statName="Nombre de tirs cadrés"/>
                 <Barchart id="shotsOnTargetPercentage" :data="shotsOnTargetPercentageStat" title="Pourcentage de tirs cardés" statName="Poucentage de tirs cadrés"/>
-                <Barchart id="goalsPerShotOnTarget" :data="goalsPerShotOnTargetStat" title="Buts par tir cadré" statName="But par tir cadré"/>
-                <Barchart id="passingStat" :data="passingStat" title="Passes" statName="Passes"/>
+                <Barchart id="passingStat" :data="passingStat" title="Passes décisives" statName="Passes"/>
                 <Barchart id="passCompleted" :data="passCompletedStat" title="Passes complétées" statName="Passes complétées"/>
                 <Barchart id="gamesStarted" :data="matchPlayedStat" title="Parties jouées" statName="Parties jouées"/>
                 <Barchart id="minutesPlayed" :data="minutesPlayedStat" title="Minutes jouées" statName="Minutes jouées"/>
-                <Barchart id="yellowCards" :data="yellowCardsStat" title="Cartes jaunes recu" statName="Cartes jaunes"/>
+                <Barchart id="yellowCards" :data="yellowCardsStat" title="Cartons jaunes recu" statName="Cartons jaunes"/>
             </div>
             <div class="barchart-legend" style="display:flex; justify-content: space-between; padding-left: 40px; padding-right:15px"></div>
         </div>

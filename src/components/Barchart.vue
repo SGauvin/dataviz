@@ -108,7 +108,7 @@ export default defineComponent({
 
         function getTooltipContent(element) {
             return `<div style="font-family: 'Roboto', sans-serif">
-            <span>${element.x}<br>
+            <span>Nom du joueur: ${element.x}<br>
             ${props.statName}: ${element.y}</span>
             </div>`
         }
