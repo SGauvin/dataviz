@@ -4,6 +4,7 @@ import IntroPage from './IntroPage.vue'
 import LaLiguaIntro from './LaLiguaIntro.vue'
 import Barcharts from './Barcharts.vue'
 import Linechart from './Linechart.vue'
+import BenzemaGiroudIntro from './BenzemaGiroudIntro.vue'
 
 const frontPage = createApp(FrontPage);
 frontPage.mount('#front-page');
@@ -19,3 +20,6 @@ barcharts.mount('#barcharts');
 
 const linechart = createApp(Linechart);
 linechart.mount('#linechart');
+
+const benzemaGiroudIntro = createApp(BenzemaGiroudIntro);
+benzemaGiroudIntro.mount('#benzema-giroud-intro');

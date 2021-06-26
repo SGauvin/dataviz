@@ -1,6 +1,6 @@
 <template>
     <h1 class="h1-front-page">
-        Benzema is back.
+        De retour<br>chez les bleus.
     </h1>
 </template>
 
@@ -19,7 +19,7 @@ export default defineComponent({
         color: white;
         margin: 0;
         padding: 0;
-        top: 90%;
+        top: 75%;
         left: 5%;
 		transform: translateY(-50%);
 		position: relative;
