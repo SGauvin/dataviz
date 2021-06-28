@@ -136,7 +136,7 @@ export default defineComponent({
 
             createLegend(liguaStats);
 
-            // Barcharts
+            // Barchart stats
             goalStat.value = getStat(liguaStats, 'Goals');
             goalsPer90MinutesStat.value = getStat(liguaStats, 'GoalsPer90Minutes');
             passCompletedStat.value = getStat(liguaStats, 'PassCompleted');

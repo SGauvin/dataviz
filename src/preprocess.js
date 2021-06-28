@@ -72,9 +72,9 @@ function computeDerivedStats(data) {
 }
 
 export async function getLiguaStats() {
-    const standardStatsFilename = window.location.origin + '/dataviz/standard_stats_la_ligua.csv';
-    const shootingStatsFilename = window.location.origin + '/dataviz/shooting_stats_la_ligua.csv';
-    const passingStatsFilename = window.location.origin + '/dataviz/passing_stats_la_ligua.csv';
+    const standardStatsFilename = window.location.origin + '/standard_stats_la_ligua.csv';
+    const shootingStatsFilename = window.location.origin + '/shooting_stats_la_ligua.csv';
+    const passingStatsFilename = window.location.origin + '/passing_stats_la_ligua.csv';
     const standardStats = await d3.csv(standardStatsFilename);
     const shootingStats = await d3.csv(shootingStatsFilename);
     const passingStats = await d3.csv(passingStatsFilename);
@@ -91,9 +91,9 @@ export async function getLiguaStats() {
 }
 
 export async function getBenzemaHistoricalStats() {
-    const standardStatsFilename = window.location.origin + '/dataviz/benzema_standard_stats_historical_values.csv';
-    const shootingStatsFilename = window.location.origin + '/dataviz/benzema_shooting_stats_historical_values.csv';
-    const passingStatsFilename = window.location.origin + '/dataviz/benzema_passing_stats_historical_values.csv';
+    const standardStatsFilename = window.location.origin + '/benzema_standard_stats_historical_values.csv';
+    const shootingStatsFilename = window.location.origin + '/benzema_shooting_stats_historical_values.csv';
+    const passingStatsFilename = window.location.origin + '/benzema_passing_stats_historical_values.csv';
     const standardStats = await d3.csv(standardStatsFilename);
     const shootingStats = await d3.csv(shootingStatsFilename);
     const passingStats = await d3.csv(passingStatsFilename);
@@ -109,9 +109,9 @@ export async function getBenzemaHistoricalStats() {
 }
 
 export async function getGiroudHistoricalStats() {
-    const standardStatsFilename = window.location.origin + '/dataviz/giroud_standard_stats_historical_values.csv';
-    const shootingStatsFilename = window.location.origin + '/dataviz/giroud_shooting_stats_historical_values.csv';
-    const passingStatsFilename = window.location.origin + '/dataviz/giroud_passing_stats_historical_values.csv';
+    const standardStatsFilename = window.location.origin + '/giroud_standard_stats_historical_values.csv';
+    const shootingStatsFilename = window.location.origin + '/giroud_shooting_stats_historical_values.csv';
+    const passingStatsFilename = window.location.origin + '/giroud_passing_stats_historical_values.csv';
     const standardStats = await d3.csv(standardStatsFilename);
     const shootingStats = await d3.csv(shootingStatsFilename);
     const passingStats = await d3.csv(passingStatsFilename);
