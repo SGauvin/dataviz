@@ -8,7 +8,7 @@
             <div class="list-item" :class="{selected : currentStatName === 'ShotsOnTarget'}" @click="updateData('ShotsOnTarget')">Tirs cadrés</div>
             <div class="list-item" :class="{selected : currentStatName === 'GoalsPerShotsOnTarget'}" @click="updateData('GoalsPerShotsOnTarget')">Buts par tir cadré</div>
             <div class="list-item" :class="{selected : currentStatName === 'GoalsPer90Minutes'}" @click="updateData('GoalsPer90Minutes')">Buts par 90 minutes</div>
-            <div class="list-item" :class="{selected : currentStatName === 'AssistsPer90Minutes'}" @click="updateData('AssistsPer90Minutes')">Passes par 90 minutes</div>
+            <div class="list-item" :class="{selected : currentStatName === 'AssistsPer90Minutes'}" @click="updateData('AssistsPer90Minutes')">Passes décisives par 90 minutes</div>
             <div class="list-item" :class="{selected : currentStatName === 'ShotsOnTargetPer90Minutes'}" @click="updateData('ShotsOnTargetPer90Minutes')">Tirs cadrés par 90 minutes</div>
             <div class="list-item" :class="{selected : currentStatName === 'YellowCards'}" @click="updateData('YellowCards')">Cartons jaunes</div>
             <div class="list-item" :class="{selected : currentStatName === 'RedCards'}" @click="updateData('RedCards')">Cartons rouges</div>

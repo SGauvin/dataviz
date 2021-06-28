@@ -7,7 +7,6 @@
                 défendre en cour, les sélectionneurs de l'équipe de France ont refusé d'appeler le talentueux joueur pour représenter son pays dans des tournois internationaux.
                 Heureusement pour se dernier, le sélectionneur principal de l'équipe de France, Didier Deschamps, a décidé de le laisser participer à l'Euro 2021.
                 Cette controverse a amené beaucoup de questionnements dans le monde du soccer, notamment au sujet de l'objectivité des décisions prises par les entraîneurs et sélectionneurs.
-                En effet, la décision d'exclure Karim Benzema de l'équipe de France n'était clairement pas basée sur des statistiques objectives.
             </p>
             <p>
                 Nous vous présentons donc une visualisation de données dans le but de dresser un portrait objectif de Karim Benzema en tant que joueur
